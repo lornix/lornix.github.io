@@ -109,11 +109,101 @@ exit(0);
 
 <p>Some C code:</p>
 
-<p>File /home/pi/octopress/source/downloads/code/downloads/code/free_malloc.c could not be found</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>&#8220;Free/Malloc&#8221; (free_malloc.c)</span> <a href="/downloads/code/free_malloc.c">download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#define _GNU_SOURCE</span>
+</span><span class="line"><span class="cp">#include &lt;dlfcn.h&gt;</span>
+</span><span class="line"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">void</span><span class="o">*</span> <span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">sz</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">    <span class="kt">void</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">libc_malloc</span><span class="p">)(</span><span class="kt">size_t</span><span class="p">)</span> <span class="o">=</span> <span class="n">dlsym</span><span class="p">(</span><span class="n">RTLD_NEXT</span><span class="p">,</span> <span class="s">&quot;malloc&quot;</span><span class="p">);</span>
+</span><span class="line">    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;malloc</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class="line">    <span class="k">return</span> <span class="n">libc_malloc</span><span class="p">(</span><span class="n">sz</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">void</span> <span class="nf">free</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">libc_free</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="o">=</span> <span class="n">dlsym</span><span class="p">(</span><span class="n">RTLD_NEXT</span><span class="p">,</span> <span class="s">&quot;free&quot;</span><span class="p">);</span>
+</span><span class="line">    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;free</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class="line">    <span class="n">libc_free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">    <span class="n">free</span><span class="p">(</span><span class="n">malloc</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</span><span class="line">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Some C++</p>
 
-<p>File /home/pi/octopress/source/downloads/code/downloads/code/c++-split_join.cc could not be found</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>&#8220;C++ split/join&#8221; (c++-split_join.cpp)</span> <a href="/downloads/code/c++-split_join.cpp">download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+</pre></td><td class="code"><pre><code class="cpp"><span class="line"><span class="cp">#include &lt;vector&gt;</span>
+</span><span class="line"><span class="cp">#include &lt;string&gt;</span>
+</span><span class="line"><span class="cp">#include &lt;sstream&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">Lornix</span><span class="o">::</span><span class="n">split</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="kt">char</span> <span class="n">delim</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">elems</span><span class="p">;</span>
+</span><span class="line">    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+</span><span class="line">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">item</span><span class="p">;</span>
+</span><span class="line">    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">ss</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">delim</span><span class="p">))</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">elems</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">    <span class="k">return</span> <span class="n">elems</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Lornix</span><span class="o">::</span><span class="n">join</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">delim</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class="line">    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">delim</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">    <span class="k">return</span> <span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 </div>
   
