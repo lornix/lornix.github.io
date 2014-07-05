@@ -21,10 +21,10 @@ And then back to regular stuff.
 
 Some C code:
 
-{% include_code "Free/Malloc" downloads/code/free_malloc.c %}
+{% include_code "Free/Malloc" free_malloc.c %}
 
 Some C++
 
-{% include_code "C++ split/join" downloads/code/c++-split_join.cc %}
+{% include_code "C++ split/join" c++-split_join.cc %}
 
 [1]: http://github.com/lornix/lornix.github.io
