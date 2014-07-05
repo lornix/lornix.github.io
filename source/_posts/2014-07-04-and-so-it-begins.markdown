@@ -21,7 +21,7 @@ And then back to regular stuff.
 
 Some C code:
 
-<!-- language: C -->
+<!-- language: c -->
 
     #define _GNU_SOURCE
     #include <dlfcn.h>
@@ -49,7 +49,7 @@ Some C code:
 
 Some C++
 
-<!-- language: c++ -->
+<!-- language: cc -->
 
     #include <vector>
     #include <string>
