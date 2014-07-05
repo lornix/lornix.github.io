@@ -21,56 +21,10 @@ And then back to regular stuff.
 
 Some C code:
 
-<!-- language: c -->
-
-    #define _GNU_SOURCE
-    #include <dlfcn.h>
-    #include <stdio.h>
-
-    void* malloc(size_t sz)
-    {
-        void *(*libc_malloc)(size_t) = dlsym(RTLD_NEXT, "malloc");
-        printf("malloc\n");
-        return libc_malloc(sz);
-    }
-
-    void free(void *p)
-    {
-        void (*libc_free)(void*) = dlsym(RTLD_NEXT, "free");
-        printf("free\n");
-        libc_free(p);
-    }
-
-    int main()
-    {
-        free(malloc(10));
-        return 0;
-    }
+{% include_code "Free/Malloc" downloads/code/free_malloc.c %}
 
 Some C++
 
-<!-- language: cc -->
-
-    #include <vector>
-    #include <string>
-    #include <sstream>
-
-    std::vector<std::string> Lornix::split(std::string s, char delim) {
-        std::vector<std::string> elems;
-        std::stringstream ss(s);
-        std::string item;
-        while (std::getline(ss, item, delim)) {
-            elems.push_back(item);
-        }
-        return elems;
-    }
-
-    std::string Lornix::join(std::vector<std::string> v, std::string delim) {
-        std::stringstream ss = v[0];
-        for (size_t i = 1; i < v.size(); ++i) {
-            ss << delim << v[i];
-        }
-        return ss.str();
-    }
+{% include_code "C++ split/join" downloads/code/c++-split_join.cc %}
 
 [1]: http://github.com/lornix/lornix.github.io
