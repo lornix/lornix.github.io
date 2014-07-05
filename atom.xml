@@ -4,7 +4,7 @@
   <title><![CDATA[Blargle!]]></title>
   <link href="http://lornix.github.io/atom.xml" rel="self"/>
   <link href="http://lornix.github.io/"/>
-  <updated>2014-07-04T20:23:55-07:00</updated>
+  <updated>2014-07-04T20:50:09-07:00</updated>
   <id>http://lornix.github.io/</id>
   <author>
     <name><![CDATA[lornix]]></name>
@@ -12,5 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[And So It Begins]]></title>
+    <link href="http://lornix.github.io/blog/2014/07/04/and-so-it-begins/"/>
+    <updated>2014-07-04T20:47:23-07:00</updated>
+    <id>http://lornix.github.io/blog/2014/07/04/and-so-it-begins</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m going to try to document some of my findings and explorations, much of
+which I probably have in a git repo somewhere.</p>
+
+<p>Also have to figure out the markdown syntax for here.</p>
+]]></content>
+  </entry>
   
 </feed>
