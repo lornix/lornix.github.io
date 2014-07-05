@@ -12,4 +12,11 @@ Also have to figure out the markdown syntax for here.
 
 __Basically__, I _should_ be able to `use` [GitHub][1] Flavored Markdown here now.
 
+    Some code lines here
+    let x=y*25;
+    writeln("Argh! Pascal!");
+    exit(0);
+
+And then back to regular stuff.
+
 [1]: http://github.com/lornix/lornix.github.io
