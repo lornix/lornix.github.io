@@ -19,12 +19,62 @@ __Basically__, I _should_ be able to `use` [GitHub][1] Flavored Markdown here no
 
 And then back to regular stuff.
 
-Some C code:
+Some C code: (included)
 
 {% include_code "Free/Malloc" free_malloc.c %}
 
-Some C++
+Same C code.. inline:
+
+    #define _GNU_SOURCE
+    #include <dlfcn.h>
+    #include <stdio.h>
+
+    void* malloc(size_t sz)
+    {
+        void *(*libc_malloc)(size_t) = dlsym(RTLD_NEXT, "malloc");
+        printf("malloc\n");
+        return libc_malloc(sz);
+    }
+
+    void free(void *p)
+    {
+        void (*libc_free)(void*) = dlsym(RTLD_NEXT, "free");
+        printf("free\n");
+        libc_free(p);
+    }
+
+    int main()
+    {
+        free(malloc(10));
+        return 0;
+    }
+
+Some C++: (included)
 
 {% include_code "C++ split/join" c++-split_join.cpp %}
+
+Same C++, inline:
+
+    #include <vector>
+    #include <string>
+    #include <sstream>
+
+    std::vector<std::string> Lornix::split(std::string s, char delim) {
+        std::vector<std::string> elems;
+        std::stringstream ss(s);
+        std::string item;
+        while (std::getline(ss, item, delim)) {
+            elems.push_back(item);
+        }
+        return elems;
+    }
+
+    std::string Lornix::join(std::vector<std::string> v, std::string delim) {
+        std::stringstream ss = v[0];
+        for (size_t i = 1; i < v.size(); ++i) {
+            ss << delim << v[i];
+        }
+        return ss.str();
+    }
 
 [1]: http://github.com/lornix/lornix.github.io
