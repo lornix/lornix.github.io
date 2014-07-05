@@ -100,6 +100,6 @@ google_analytics_tracking_id:
 # Facebook Like
 facebook_like: false
 
-# Stack Overflow:
-stackoverflow_user_name: lornix
-stackoverflow_user_id: 387936
+# Stack Exchange:
+stackexchange_user_name: lornix
+stackexchange_user_id: 164885
