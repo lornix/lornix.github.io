@@ -19,6 +19,10 @@ __Basically__, I _should_ be able to `use` [GitHub][1] Flavored Markdown here no
 
 And then back to regular stuff.
 
+Some C code:
+
+<!-- language: C -->
+
     #define _GNU_SOURCE
     #include <dlfcn.h>
     #include <stdio.h>
@@ -43,7 +47,9 @@ And then back to regular stuff.
         return 0;
     }
 
+Some C++
 
+<!-- language: c++ -->
 
     #include <vector>
     #include <string>
