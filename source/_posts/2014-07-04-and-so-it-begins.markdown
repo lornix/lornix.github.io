@@ -25,6 +25,6 @@ Some C code:
 
 Some C++
 
-{% include_code "C++ split/join" c++-split_join.cc %}
+{% include_code "C++ split/join" c++-split_join.cpp %}
 
 [1]: http://github.com/lornix/lornix.github.io
