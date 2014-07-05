@@ -56,9 +56,9 @@ module Jekyll
       @caption = nil
       @filetype = nil
       @highlight = true
-      if markup =~ /\s*lang:(\S+)/i
+      if markup =~ /\s*lang:(\w+)/i
         @filetype = $1
-        markup = markup.sub(/\s*lang:(\S+)/i,'')
+        markup = markup.sub(/lang:\w+/i,'')
       end
       if markup =~ CaptionUrlTitle
         @file = $1
@@ -79,7 +79,7 @@ module Jekyll
       source = "<figure class='code'>"
       source += @caption if @caption
       if @filetype
-        source += "#{highlight(code, @filetype)}</figure>"
+        source += " #{highlight(code, @filetype)}</figure>"
       else
         source += "#{tableize_code(code.lstrip.rstrip.gsub(/</,'&lt;'))}</figure>"
       end

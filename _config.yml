@@ -31,24 +31,22 @@ permalink: /blog/:year/:month/:day/:title/
 source: source
 destination: public
 plugins: plugins
-code_dir: downloads/code
+code_dir: code
 category_dir: blog/categories
-
 markdown: kramdown
-
 kramdown:
   input: GFM
   use_coderay: true
   coderay:
     coderay_line_numbers: nil
     coderay_css: class
+highlighter: pygments # default python pygments have been replaced by pygments.rb
 
 rdiscount:
   extensions:
     - autolink
     - footnotes
     - smart
-highlighter: pygments # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
 paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/

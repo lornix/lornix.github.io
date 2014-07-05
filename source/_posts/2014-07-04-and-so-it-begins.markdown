@@ -17,11 +17,7 @@ __Basically__, I _should_ be able to `use` [GitHub][1] Flavored Markdown here no
     writeln("Argh! Pascal!");
     exit(0);
 
-And then back to regular stuff.
-
-Some C code: (included)
-
-{% include_code "Free/Malloc" free_malloc.c %}
+And then back to regular text.
 
 Same C code.. inline:
 
@@ -48,12 +44,9 @@ Same C code.. inline:
         free(malloc(10));
         return 0;
     }
+{:lang=c}
 
-Some C++: (included)
-
-{% include_code "C++ split/join" c++-split_join.cpp %}
-
-Same C++, inline:
+Some C++, inline:
 
     #include <vector>
     #include <string>
@@ -76,5 +69,6 @@ Same C++, inline:
         }
         return ss.str();
     }
+{:lang=c++}
 
 [1]: http://github.com/lornix/lornix.github.io
