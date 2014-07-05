@@ -4,7 +4,7 @@
   <title><![CDATA[Blargle!]]></title>
   <link href="http://lornix.github.io/atom.xml" rel="self"/>
   <link href="http://lornix.github.io/"/>
-  <updated>2014-07-04T21:20:29-07:00</updated>
+  <updated>2014-07-04T21:23:01-07:00</updated>
   <id>http://lornix.github.io/</id>
   <author>
     <name><![CDATA[lornix]]></name>
@@ -35,7 +35,7 @@ exit(0);
 
 <p>Some C code:</p>
 
-<!-- language: C -->
+<!-- language: c -->
 
 <pre><code>#define _GNU_SOURCE
 #include &lt;dlfcn.h&gt;
@@ -64,7 +64,7 @@ int main()
 
 <p>Some C++</p>
 
-<!-- language: c++ -->
+<!-- language: cc -->
 
 <pre><code>#include &lt;vector&gt;
 #include &lt;string&gt;
